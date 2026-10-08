@@ -1,18 +1,14 @@
-name: vyos-lab
+name: demo
 
 topology:
-
   nodes:
-
-    r1:
+    node1:
       kind: linux
-      image: afla/vyos:1.4
+      image: alpine:latest
 
-    r2:
+    node2:
       kind: linux
-      image: afla/vyos:1.4
+      image: alpine:latest
 
   links:
-    - endpoints:
-      - r1:eth1
-      - r2:eth1
+    - endpoints: ["node1:eth1", "node2:eth1"]
