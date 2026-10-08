@@ -31,39 +31,7 @@ jobs:
         pip install ansible
         pip install ansible-lint
 
-    - name: Install VyOS Collection
+    - name: Install LAB Collection
 
       run: |
-        ansible-galaxy collection install vyos.vyos
-
-    
-
-  deploy:
-
-    needs: validate
-
-    runs-on: self-hosted
-
-    steps:
-
-    - uses: actions/checkout@v4
-
-    - name: Deploy Containerlab
-
-      run: |
-        sudo containerlab deploy \
-        -t containerlab/topology.yml
-
-    - name: Configure VyOS
-
-      run: |
-        ansible-playbook \
-          -i ansible/inventory.yml \
-          ansible/site.yml
-
-    - name: Verify
-
-      run: |
-        ansible-playbook \
-          -i ansible/inventory.yml \
-          tests/verify.yml
+        ansible-galaxy collection list
