@@ -36,3 +36,9 @@ jobs:
       run: |
         sudo containerlab deploy \
         -t containerlab/topology.yml
+
+    - name: Run playbook
+      run: |
+        ansible-playbook \
+          -i ansible/inventory.yml \
+          ansible/site.yml
