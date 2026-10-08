@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "srlabo-mgmt",
-        "bridge": "br-a56a6406dd9f",
+        "bridge": "br-b5a90dd5cdc4",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "external-access": true
@@ -32,7 +32,7 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-a56a6406dd9f",
+        "clab-mgmt-net-bridge": "br-b5a90dd5cdc4",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node1",
@@ -63,7 +63,7 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-a56a6406dd9f",
+        "clab-mgmt-net-bridge": "br-b5a90dd5cdc4",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node2",
@@ -84,13 +84,13 @@
         "a": {
           "node": "node1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:4c:28:8a",
+          "mac": "aa:c1:ab:e7:59:e9",
           "peer": "z"
         },
         "z": {
           "node": "node2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:36:ea:cd",
+          "mac": "aa:c1:ab:c4:66:24",
           "peer": "a"
         }
       }
