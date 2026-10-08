@@ -1,0 +1,9 @@
+---
+
+- name: Configure hostname
+  vyos.vyos.vyos_config:
+
+    lines:
+      - set system host-name {{ inventory_hostname }}
+
+    save: true

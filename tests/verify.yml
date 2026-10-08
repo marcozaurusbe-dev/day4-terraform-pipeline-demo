@@ -1,0 +1,19 @@
+---
+
+- hosts: vyos
+
+  gather_facts: false
+
+  tasks:
+
+    - name: Check hostname
+
+      vyos.vyos.vyos_command:
+
+        commands:
+          - show configuration commands
+
+      register: result
+
+    - debug:
+        var: result.stdout_lines

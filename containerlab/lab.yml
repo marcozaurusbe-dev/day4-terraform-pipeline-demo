@@ -1,0 +1,7 @@
+name: vyos-lab
+
+topology:
+  nodes:
+    vyos1:
+      kind: linux
+      image: afla/vyos:1.4
