@@ -1,0 +1,99 @@
+{
+  "name": "demo_containerlab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "srlabo-mgmt",
+        "bridge": "br-a56a6406dd9f",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxCXqcdlVTa0F6qYENKckm8ITBLDSubbfcGuEsFoAz/2ryV4ZZa6EyjnRdW8f/ImyRsr4UrVH0GolR6Hu44nwqzyGeJqGH4LB/s5FH9j3ClkWplLVTa3FzC+0jx5jZr0nolHYkfLwG7Bk6SGgXASPxqzK64J6urk/F+UQi01yq1B4qgxzy6j/XO1Bca6g4rE3yLGOfsWeltOXgCGY7QklXzjKZkzzzJoqq4l4TFYASIVnpi253v9GyKJ8RkESHWaoJS0EYtv+Tx9//9eqkQtWOTaqo0RZVtqcdghbijwp9zZ1suK8HEnVnt8OR2ceeu/eZHB5NV5cGl12TLLfPirT9ZjeFguVgsVro5sVBlXEYTtQ8ZGo+lGO+6M77SGo2qorqm7hBK2dPXqD+DNcnkObqc695Fef8F/hML3DOvYPw/e3uTM2c3DCYVcQrCpeQTc2l9Ld8GsAN3OpuOGwfmnDGZ6f8F736zYjXvSEfRe847rejfKt3zMQO84+1j1YG+9r4pIvJrBNZsjwKQ9H32SWH5YBUFYE4yB4cpNDJk+QvF9EuDZXAyrofC4Glm1PUS1HHqSgZMmnNbpShNlFhBMWJvylQgEnJL/p3J7e8STVnTKd9X82YUGr8ZhAwC6vI6kydh8fCEZUD7+Z6KL2BXmKykprCLGNVuNuolQ+UPXFmQw=="],
+  "nodes": {
+    "node1": {
+      "index": "0",
+      "shortname": "node1",
+      "longname": "clab-demo_containerlab-node1",
+      "fqdn": "node1.demo_containerlab.io",
+      "group": "",
+      "labdir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node1",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.111",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a56a6406dd9f",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node1",
+        "clab-node-longname": "clab-demo_containerlab-node1",
+        "clab-node-name": "node1",
+        "clab-node-type": "",
+        "clab-owner": "delegate",
+        "clab-topo-file": "/home/delegate/network-automation/containerlab/topology.yml",
+        "containerlab": "demo_containerlab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "node2": {
+      "index": "1",
+      "shortname": "node2",
+      "longname": "clab-demo_containerlab-node2",
+      "fqdn": "node2.demo_containerlab.io",
+      "group": "",
+      "labdir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node2",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.122",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a56a6406dd9f",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/delegate/network-automation/containerlab/clab-demo_containerlab/node2",
+        "clab-node-longname": "clab-demo_containerlab-node2",
+        "clab-node-name": "node2",
+        "clab-node-type": "",
+        "clab-owner": "delegate",
+        "clab-topo-file": "/home/delegate/network-automation/containerlab/topology.yml",
+        "containerlab": "demo_containerlab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "node1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:4c:28:8a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "node2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:36:ea:cd",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
