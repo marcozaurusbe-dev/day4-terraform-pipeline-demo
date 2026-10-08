@@ -1,8 +1,13 @@
+# inventory.yml
 all:
   children:
     nodes:
       hosts:
-        r1:
+        node1:
           ansible_host: 172.20.20.111
-        r2:
+        node2:
           ansible_host: 172.20.20.122
+      vars:
+        ansible_user: root
+        ansible_password: admin
+        ansible_ssh_common_args: '-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'

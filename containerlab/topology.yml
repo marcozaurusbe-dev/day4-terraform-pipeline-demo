@@ -10,11 +10,23 @@ topology:
       kind: linux
       image: alpine:latest
       mgmt-ipv4: 172.20.20.111
+      exec:
+        - apk add --no-cache openssh
+        - ssh-keygen -A
+        - sh -c "echo 'root:admin' | chpasswd"
+        - sed -i 's/^#*PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+        - /usr/sbin/sshd
 
     node2:
       kind: linux
       image: alpine:latest
       mgmt-ipv4: 172.20.20.122
+      exec:
+        - apk add --no-cache openssh
+        - ssh-keygen -A
+        - sh -c "echo 'root:admin' | chpasswd"
+        - sed -i 's/^#*PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+        - /usr/sbin/sshd
 
   links:
     - endpoints: ["node1:eth1", "node2:eth1"]

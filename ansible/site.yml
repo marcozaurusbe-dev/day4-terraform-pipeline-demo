@@ -1,16 +1,20 @@
 ---
-- name: Validate ifconfig
+- name: Create folder over SSH
   hosts: nodes
-
   gather_facts: false
 
   tasks:
     - name: Create automation directory
-      ansible.builtin.file:
-        path: /tmp/linux_automation
-        state: directory
+      ansible.builtin.raw: mkdir -p /tmp/linux_automation
 
     - name: Create information file
-      ansible.builtin.copy:
-        content: "Linux automation completed using Ansible."
-        dest: /tmp/linux_automation/info.txt
+      ansible.builtin.raw: echo "Linux automation completed using Ansible." > /tmp/linux_automation/info.txt
+
+    - name: Check result
+      ansible.builtin.raw: ls -l /tmp/linux_automation
+      register: result
+      changed_when: false
+
+    - name: Show result
+      ansible.builtin.debug:
+        var: result.stdout_lines
