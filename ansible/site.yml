@@ -1,9 +1,16 @@
 ---
-
-- hosts: nodes
+- name: Validate ifconfig
+  hosts: nodes
 
   gather_facts: false
 
-  roles:
-    - base
-    - ospf
+  tasks:
+    - name: Create automation directory
+      ansible.builtin.file:
+        path: /tmp/linux_automation
+        state: directory
+
+    - name: Create information file
+      ansible.builtin.copy:
+        content: "Linux automation completed using Ansible."
+        dest: /tmp/linux_automation/info.txt
